@@ -21,14 +21,14 @@ import datetime
 import unzipr
 
 
-def prep(zipFile):
-    extractDirectory = unzipr.unzipFile(zipFile)
-    extractDirectory = Directory(extractDirectory)
-    extractDirectory.deleteAllButLastSubmissions()
-    extractDirectory.renameSubmissions()
-    extractDirectory = str(extractDirectory)
-    unzipr.unzipFilesInDirectoryRecursively(extractDirectory)
-    unzipr.deleteZipFilesFromDirectoryRecursively(extractDirectory)
+def prep(zipFile, toDir=None):
+    toDir = unzipr.unzipFile(zipFile, toDir)
+    toDir = Directory(toDir)
+    toDir.deleteAllButLastSubmissions()
+    toDir.renameSubmissions()
+    toDir = str(toDir)
+    unzipr.unzipFilesInDirectoryRecursively(toDir)
+    unzipr.deleteZipFilesFromDirectoryRecursively(toDir)
 
 
 class Directory:
@@ -99,4 +99,10 @@ class File:
 
 
 import sys
-prep(sys.argv[1])
+zipFile = sys.argv[1]
+toDir = None
+if len(sys.argv) > 1:
+    toDir = sys.argv[2]
+print(zipFile)
+print(toDir)
+prep(zipFile, toDir)
