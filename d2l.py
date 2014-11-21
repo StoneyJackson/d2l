@@ -103,6 +103,4 @@ zipFile = sys.argv[1]
 toDir = None
 if len(sys.argv) > 1:
     toDir = sys.argv[2]
-print(zipFile)
-print(toDir)
 prep(zipFile, toDir)
