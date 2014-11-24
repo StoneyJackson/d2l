@@ -39,9 +39,9 @@ class Directory:
         files = self._getFiles()
         for f in files:
             parts = f.studentName.split()
-            last = parts[-1]
-            first = '-'.join(parts[:-1])
-            name = last + '_' + first
+            lastName = parts[-1]
+            allButLastName = '-'.join(parts[:-1])
+            name = lastName + '_' + allButLastName
             name += ''.join(f.namePath.suffixes)
             pathlib.Path(str(f)).rename(self.directory/name)
 
