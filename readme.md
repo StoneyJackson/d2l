@@ -1,7 +1,6 @@
 # d2l.py
 
-My personal library for manipulating Desire2Learn's mass downloaded assignment
-  files.
+A command-line tool for extracting Desire2Learn's mass download zips.
 
 ## Requires
 
