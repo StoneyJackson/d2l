@@ -5,7 +5,7 @@ My personal library for manipulating Desire2Learn's mass downloaded assignment
 
 ## Requires
 
-* unzipr
+* [unzipR](https://github.com/StoneyJackson/unzipR)
 
 ## Features
 
